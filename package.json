@@ -1,7 +1,11 @@
 {
-  "name": "easy-chatgpt",
+  "name": "easy-chat-gpt",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": "9.5.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,16 +13,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.2.1",
+    "@types/node": "20.1.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "eslint": "8.40.0",
-    "eslint-config-next": "13.4.2",
-    "next": "13.4.2",
+    "eslint-config-next": "13.4.1",
+    "framer-motion": "^10.12.12",
+    "next": "13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "swr": "^2.1.5",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
   }
