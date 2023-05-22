@@ -33,7 +33,8 @@ export default function Home() {
 		
 		if(!response.ok){
 			let res=await response.json();
-			setErrMessage(res.error.message)
+			if(res.error.message !=null){
+			setErrMessage(res.error.message)}
 			setIsResOk(response.ok)
 		}
 		if (response.ok) {
