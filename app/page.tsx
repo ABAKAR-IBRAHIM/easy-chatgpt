@@ -1,9 +1,13 @@
 "use client";
 
+import Navbar from "@/components/navbar";
 import { useState } from "react";
 
 export default function Home() {
+	
 	const [loading, setLoading] = useState(false);
+	const [isResOk, setIsResOk] = useState(true);
+	const [errMessage, setErrMessage] = useState('Something went wrong');
 	const [content, setContent] = useState('Hello! How may I assist you today?');
 	async function handleSubmit(event: any) {
 		event.preventDefault();
@@ -26,27 +30,46 @@ export default function Home() {
 			
 			body: JSON.stringify(data),
 		});
-
+		
+		if(!response.ok){
+			let res=await response.json();
+			setErrMessage(res.error.message)
+			setIsResOk(response.ok)
+		}
 		if (response.ok) {
 			let res=await response.json();
 			console.log(`Message sent successfully ${res}`);
 			
+
+			
 			setLoading(false);
-			setContent(res)
+			setContent(res.replace(/\n/g, "<br />"))
 			
 			event.target.message.value = "";
 		}
-		if (!response.ok) {
-			console.log("Error sending message");
-			setLoading(false);
-		}
+
+		
+
+	setLoading(false);
+
+		
+	
+		
 	}
+
+
+	if(!isResOk) throw new Error(errMessage)
+
+
 	return (
 		
 
 		
 		<>
-		<p className="text-white pt-32 font-mono text-center">{content}</p>
+		<Navbar />
+		
+		<p  dangerouslySetInnerHTML={{__html:content}} className="text-white pt-32 font-mono pl-5 pr-5" />
+	
 		<form onSubmit={handleSubmit}className="absolute inset-x-0  pl-14 pr-14 bottom-0" >
 		
 		
@@ -72,3 +95,4 @@ export default function Home() {
 		
 	);
 }
+

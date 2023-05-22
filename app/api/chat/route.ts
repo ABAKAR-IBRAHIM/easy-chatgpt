@@ -20,8 +20,10 @@ export async function POST(request: Request) {
  
   return NextResponse.json(response.data.choices[0].message.content);
   } catch (error) {
-    console.error(error);
-    return NextResponse.json(error);
+    console.error(error );
+    return   new Response(JSON.stringify({ error: { message: (error as Error).message} }), {
+      status: 400,
+    });
   }
   
  
