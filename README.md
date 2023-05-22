@@ -13,12 +13,13 @@ npm install
 ```
 
 2. Copy `.env.example` to `.env` and update the variables.
-Go to https://rapidapi.com/search/chatgpt and select any chatgpt api and update the variables in the .env
+
 
 
 ```sh
 cp .env.example .env
 ```
+Go to https://rapidapi.com/search/chatgpt and select any chatgpt api and update the variables in the .env
 
 3. Start the development server:
 
