@@ -2,6 +2,7 @@ The Open Source Easy-ChatGPT app is a ChatGPT-powered platform designed for peop
 
 With its easy-to-use interface, users can quickly connect with various ChatGPT APIS from https://rapidapi.com/search/chatgpt.
 
+https://github.com/ABAKAR-IBRAHIM/easy-chatgpt/assets/93058209/06452d8c-3e31-44c1-8c92-9edcb3e0a1c7
 
 
 ## Running Locally
