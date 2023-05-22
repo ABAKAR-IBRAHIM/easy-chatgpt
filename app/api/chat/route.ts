@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   const res = await request.json();
   const options = {
     method: 'POST',
-    url: process.env.URL,
+    url: process.env.URL_,
     headers: {
       'Accept-Encoding': 'gzip',
       'content-type': 'application/json',
