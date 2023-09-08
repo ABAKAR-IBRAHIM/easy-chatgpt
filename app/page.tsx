@@ -39,6 +39,7 @@ export default function Home() {
       console.log(`Message sent successfully ${res}`);
 
       setLoading(false);
+      console.log("res.LLAMA", res.LLAMA);
       setContent(res.LLAMA.replace(/\n/g, "<br />"));
 
       event.target.message.value = "";
